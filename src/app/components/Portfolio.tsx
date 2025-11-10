@@ -13,7 +13,7 @@ export default function Portfolio() {
               We're currently building <span className="text-blue">enterprise-grade</span> solutions for clients.
             </p>
             <a
-              href="https://upwork.com/agencies/apexbyte"
+              href="https://www.upwork.com/agencies/1987633811629156401/"
               target="_blank"
               className="inline-flex items-center gap-2 bg-blue hover:bg-lightblue text-white px-6 py-3 rounded-lg font-medium transition-all hover:shadow-card"
             >
