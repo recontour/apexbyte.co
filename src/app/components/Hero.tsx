@@ -43,7 +43,7 @@ export default function Hero() {
   }, [text, isDeleting, loopNum, typingSpeed]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
+    <section className="relative h-[calc(100vh-93px)] flex items-center justify-center overflow-hidden px-6">
       {/* Background Orbs */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue/30 rounded-full blur-3xl animate-pulse"></div>

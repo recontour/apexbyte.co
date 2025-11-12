@@ -18,3 +18,15 @@ section {
 .animate-blink {
   animation: blink 1s step-end infinite;
 }
+
+/* Offset for sticky header on anchor links */
+#about, #services, #portfolio, #contact {
+  scroll-margin-top: 0px;
+}
+
+/* Mobile adjustment (if header changes height) */
+@media (max-width: 768px) {
+  #about, #services, #portfolio, #contact {
+    scroll-margin-top: 0x; /* Adjust if mobile header is shorter */
+  }
+}
