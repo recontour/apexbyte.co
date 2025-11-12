@@ -64,7 +64,7 @@ export default function Hero() {
 
         <div className="text-lg md:text-xl text-gray mb-12 max-w-3xl mx-auto leading-relaxed space-y-2">
   <p>
-    We deliver <span className="text-blue font-bold">production-grade software</span>
+    We deliver <span className="text-blue font-bold">production-grade software </span>
     on time, under budget, and built to scale.
   </p>
   <p>No excuses. No tech debt. No surprises.</p>
