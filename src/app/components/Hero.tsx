@@ -62,21 +62,21 @@ export default function Hero() {
           </span>
         </p>
 
-        <div className="text-lg md:text-xl text-gray mb-12 max-w-3xl mx-auto leading-relaxed space-y-2">
-  <p>
-    We deliver <span className="text-blue font-bold">production-grade software </span>
-    on time, under budget, and built to scale.
-  </p>
-  <p>No excuses. No tech debt. No surprises.</p>
-  <p>Just clean, fast, future-proof apps that grow with your business.</p>
-  <p>
-    <span className="text-lightblue font-semibold">50+ projects launched.</span> 
-    <span className="text-lightblue font-semibold">100% on-time delivery.</span>
-  </p>
-  <p>
-    <strong>Your vision. Our code. One goal: results.</strong>
-  </p>
-</div>
+        <div className="text-lg md:text-xl text-gray mb-12 max-w-3xl ml-auto leading-relaxed space-y-2 text-left">
+    <p>
+      We deliver <span className="text-blue font-bold">production-grade software </span>
+      on time, under budget, and built to scale.
+    </p>
+    <p>No excuses. No tech debt. No surprises.</p>
+    <p>Just clean, fast, future-proof apps that grow with your business.</p>
+    <p>
+      <span className="text-lightblue font-semibold">50+ projects launched.</span> 
+      <span className="text-lightblue font-semibold">100% on-time delivery.</span>
+    </p>
+    <p>
+      <strong>Your vision. Our code. One goal: results.</strong>
+    </p>
+  </div>
 
         <div className="flex gap-6 justify-center">
           <Link
