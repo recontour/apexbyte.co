@@ -12,7 +12,7 @@ export default function Footer() {
           <span>•</span>
           <Link href="/terms" className="hover:text-blue transition">Terms of Service</Link>
           <span>•</span>
-          <a href="https://upwork.com/agencies/apexbyte" target="_blank" className="hover:text-blue transition">
+          <a href="https://www.upwork.com/agencies/1987633811629156401/" target="_blank" className="hover:text-blue transition">
             Upwork Profile
           </a>
         </p>
