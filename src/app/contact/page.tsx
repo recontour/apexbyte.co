@@ -44,7 +44,7 @@ export default function Contact() {
     return (
       <>
         <Header />
-        <section className="min-h-screen py-20 px-6 bg-navy flex items-center">
+        <section className="h-[calc(100vh-93px)] py-20 px-6 bg-navy flex items-center">
           <div className="max-w-2xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-blue">
               Thanks! 🚀
