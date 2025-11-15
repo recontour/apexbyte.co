@@ -63,7 +63,7 @@ export default function Header() {
               href="https://www.fiverr.com/s/YRZbDgQ"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-800 hover:bg-gray-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition-all hover:shadow-md"
+              className="bg-gradient-to-r from-blue to-lightblue text-white px-5 py-2 rounded-lg text-sm font-medium transition-all hover:shadow-card hover:scale-105"
             >
               Hire on Fiverr
             </a>
