@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-navy/90 backdrop-blur-xl border-b border-blue/20">
+      <header className="sticky top-0 z-50 bg-navy/90 backdrop-blur-xl border-b border-blue/20 h-[93px]">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
@@ -49,15 +49,25 @@ export default function Header() {
             <Link href="/contact" className="hover:text-blue transition">Contact</Link>
           </nav>
 
-          {/* Desktop CTA */}
-          <a
-            href="https://www.upwork.com/agencies/1987633811629156401/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:block bg-gradient-to-r from-blue to-lightblue text-white px-5 py-2 rounded-lg text-sm font-medium transition-all hover:shadow-card hover:scale-105"
-          >
-            Hire on Upwork
-          </a>
+          {/* Desktop CTAs */}
+          <div className="hidden md:flex gap-4 items-center">
+            <a
+              href="https://www.upwork.com/agencies/1987633811629156401/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-blue to-lightblue text-white px-5 py-2 rounded-lg text-sm font-medium transition-all hover:shadow-card hover:scale-105"
+            >
+              Hire on Upwork
+            </a>
+            <a
+              href="https://www.fiverr.com/s/YRZbDgQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-800 hover:bg-gray-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition-all hover:shadow-md"
+            >
+              Hire on Fiverr
+            </a>
+          </div>
 
           {/* Mobile Hamburger */}
           <button
@@ -101,15 +111,26 @@ export default function Header() {
             </>
           )}
           <Link href="/contact" onClick={toggleMenu} className="hover:text-blue transition">Contact</Link>
-          <a
-            href="https://www.upwork.com/agencies/1987633811629156401/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gradient-to-r from-blue to-lightblue text-white px-8 py-3 rounded-lg font-medium transition-all hover:shadow-card"
-            onClick={toggleMenu}
-          >
-            Hire on Upwork
-          </a>
+          <div className="flex gap-4">
+            <a
+              href="https://www.upwork.com/agencies/1987633811629156401/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-blue to-lightblue text-white px-6 py-3 rounded-lg font-medium transition-all hover:shadow-card"
+              onClick={toggleMenu}
+            >
+              Upwork
+            </a>
+            <a
+              href="https://www.fiverr.com/s/YRZbDgQ" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-medium transition-all hover:shadow-md"
+              onClick={toggleMenu}
+            >
+              Fiverr
+            </a>
+          </div>
         </div>
       )}
     </>
