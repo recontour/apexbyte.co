@@ -44,7 +44,7 @@ export default function Contact() {
     return (
       <>
         <Header />
-        <section className="h-[calc(100vh-93px)] py-20 px-6 bg-navy flex items-center">
+        <section className="h-[calc(100vh-93px)] py-10 px-6 bg-navy flex items-center">
           <div className="max-w-2xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-blue">
               Thanks! 🚀
@@ -133,7 +133,7 @@ export default function Contact() {
             <p className="text-gray">
               Or email us directly:{" "}
               <a href="mailto:hello@apexbyte.co" className="text-blue hover:underline">
-                hello@apexbyte.co
+                ashwin.t@apexbyte.co
               </a>
             </p>
           </div>
