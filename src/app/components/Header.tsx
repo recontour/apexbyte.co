@@ -125,7 +125,7 @@ export default function Header() {
               href="https://www.fiverr.com/s/YRZbDgQ" 
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-medium transition-all hover:shadow-md"
+              className="bg-gradient-to-r from-blue to-lightblue text-white px-6 py-3 rounded-lg font-medium transition-all hover:shadow-card"
               onClick={toggleMenu}
             >
               Fiverr
