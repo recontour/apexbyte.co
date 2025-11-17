@@ -32,9 +32,9 @@ export default function Hero() {
       } else if (isDeleting && updatedText === "") {
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
-        setTypingSpeed(100); // Type next phrase fast
+        setTypingSpeed(1000); // Type next phrase fast
       } else {
-        setTypingSpeed(isDeleting ? 50 : 100); // Delete faster than type
+        setTypingSpeed(isDeleting ? 100 : 100); // Delete faster than type
       }
     };
 
