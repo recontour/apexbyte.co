@@ -4,11 +4,11 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px; /* Height of sticky header */
+  scroll-padding-top: 90px; 
 }
 
 section {
-  scroll-margin-top: 100px; /* Ensures content isn't hidden */
+  scroll-margin-top: 100px;
 }
 
 @keyframes blink {
@@ -19,14 +19,19 @@ section {
   animation: blink 1s step-end infinite;
 }
 
-/* Offset for sticky header on anchor links */
 #about, #services, #portfolio, #contact {
   scroll-margin-top: 0px;
 }
 
-/* Mobile adjustment (if header changes height) */
 @media (max-width: 768px) {
   #about, #services, #portfolio, #contact {
-    scroll-margin-top: 0x; /* Adjust if mobile header is shorter */
+    scroll-margin-top: 0x; 
+    font-size: 14.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
   }
 }
