@@ -19,7 +19,8 @@ export default function Contact() {
     const formData = new FormData(e.currentTarget);
 
     try {
-      const res = await fetch("https://formspree.io/f/mkgknnpd", { // ← REPLACE WITH YOUR ID
+      const res = await fetch("https://formspree.io/f/mkgknnpd", {
+        // ← REPLACE WITH YOUR ID
         method: "POST",
         body: formData,
         headers: {
@@ -83,7 +84,10 @@ export default function Contact() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6 bg-navy/50 backdrop-blur-md border border-blue/20 rounded-2xl p-8">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6 bg-navy/50 backdrop-blur-md border border-blue/20 rounded-2xl p-8"
+          >
             <div>
               <label className="block text-sm font-medium mb-2">Name</label>
               <input
@@ -132,8 +136,11 @@ export default function Contact() {
           <div className="mt-12 text-center">
             <p className="text-gray">
               Or email us directly:{" "}
-              <a href="mailto:hello@apexbyte.co" className="text-blue hover:underline">
-                ashwin.t@apexbyte.co
+              <a
+                href="mailto:connect@apexbyte.co"
+                className="text-blue hover:underline"
+              >
+                connect@apexbyte.co
               </a>
             </p>
           </div>

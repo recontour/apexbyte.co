@@ -32,21 +32,35 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex gap-8 text-sm font-medium text-xl">
+          <nav className="hidden md:flex gap-8 font-medium text-xl">
             {isHome ? (
               <>
-                <Link href="#services" className="hover:text-blue transition">Services</Link>
-                <Link href="#about" className="hover:text-blue transition">About</Link>
-                <Link href="#portfolio" className="hover:text-blue transition">Portfolio</Link>
+                <Link href="#services" className="hover:text-blue transition">
+                  Services
+                </Link>
+                <Link href="#about" className="hover:text-blue transition">
+                  About
+                </Link>
+                <Link href="#portfolio" className="hover:text-blue transition">
+                  Portfolio
+                </Link>
               </>
             ) : (
               <>
-                <Link href="/#services" className="hover:text-blue transition">Services</Link>
-                <Link href="/#about" className="hover:text-blue transition">About</Link>
-                <Link href="/#portfolio" className="hover:text-blue transition">Portfolio</Link>
+                <Link href="/#services" className="hover:text-blue transition">
+                  Services
+                </Link>
+                <Link href="/#about" className="hover:text-blue transition">
+                  About
+                </Link>
+                <Link href="/#portfolio" className="hover:text-blue transition">
+                  Portfolio
+                </Link>
               </>
             )}
-            <Link href="/contact" className="hover:text-blue transition">Contact</Link>
+            <Link href="/contact" className="hover:text-blue transition">
+              Contact
+            </Link>
           </nav>
 
           {/* Desktop CTAs */}
@@ -99,18 +113,60 @@ export default function Header() {
         <div className="fixed inset-0 bg-navy/98 backdrop-blur-lg z-40 md:hidden flex flex-col items-center justify-center space-y-10 text-2xl font-medium">
           {isHome ? (
             <>
-              <Link href="#services" onClick={toggleMenu} className="hover:text-blue transition">Services</Link>
-              <Link href="#about" onClick={toggleMenu} className="hover:text-blue transition">About</Link>
-              <Link href="#portfolio" onClick={toggleMenu} className="hover:text-blue transition">Portfolio</Link>
+              <Link
+                href="#services"
+                onClick={toggleMenu}
+                className="hover:text-blue transition"
+              >
+                Services
+              </Link>
+              <Link
+                href="#about"
+                onClick={toggleMenu}
+                className="hover:text-blue transition"
+              >
+                About
+              </Link>
+              <Link
+                href="#portfolio"
+                onClick={toggleMenu}
+                className="hover:text-blue transition"
+              >
+                Portfolio
+              </Link>
             </>
           ) : (
             <>
-              <Link href="/#services" onClick={toggleMenu} className="hover:text-blue transition">Services</Link>
-              <Link href="/#about" onClick={toggleMenu} className="hover:text-blue transition">About</Link>
-              <Link href="/#portfolio" onClick={toggleMenu} className="hover:text-blue transition">Portfolio</Link>
+              <Link
+                href="/#services"
+                onClick={toggleMenu}
+                className="hover:text-blue transition"
+              >
+                Services
+              </Link>
+              <Link
+                href="/#about"
+                onClick={toggleMenu}
+                className="hover:text-blue transition"
+              >
+                About
+              </Link>
+              <Link
+                href="/#portfolio"
+                onClick={toggleMenu}
+                className="hover:text-blue transition"
+              >
+                Portfolio
+              </Link>
             </>
           )}
-          <Link href="/contact" onClick={toggleMenu} className="hover:text-blue transition">Contact</Link>
+          <Link
+            href="/contact"
+            onClick={toggleMenu}
+            className="hover:text-blue transition"
+          >
+            Contact
+          </Link>
           <div className="flex gap-4">
             <a
               href="https://www.upwork.com/agencies/1987633811629156401/"
@@ -122,7 +178,7 @@ export default function Header() {
               Upwork
             </a>
             <a
-              href="https://www.fiverr.com/s/YRZbDgQ" 
+              href="https://www.fiverr.com/s/YRZbDgQ"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-blue to-lightblue text-white px-6 py-3 rounded-lg font-medium transition-all hover:shadow-card"
