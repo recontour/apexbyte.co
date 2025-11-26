@@ -2,20 +2,32 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy border-t border-blue/20 py-10 px-6">
-      <div className="max-w-7xl mx-auto text-center text-sm text-gray">
-        <p>
-          © 2025 <span className="text-blue">ApexByte.co</span> • All Rights Reserved
+    <footer className="bg-slate-950 border-t border-slate-800 py-10 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+        {/* Copyright */}
+        <p className="text-slate-500">
+          © {new Date().getFullYear()}{" "}
+          <span className="font-bold text-white">
+            Apex<span className="text-[#3b82f6]">Byte</span>
+          </span>
+          . All Rights Reserved.
         </p>
-        <p className="mt-2 flex justify-center gap-4 flex-wrap">
-          <Link href="/privacy" className="hover:text-blue transition">Privacy Policy</Link>
-          <span>•</span>
-          <Link href="/terms" className="hover:text-blue transition">Terms of Service</Link>
-          <span>•</span>
-          <a href="https://www.upwork.com/agencies/1987633811629156401/" target="_blank" className="hover:text-blue transition">
-            Upwork Profile
-          </a>
-        </p>
+
+        {/* Links */}
+        <div className="flex gap-6 text-slate-500 font-medium">
+          <Link
+            href="/privacy"
+            className="hover:text-[#3b82f6] transition-colors"
+          >
+            Privacy Policy
+          </Link>
+          <Link
+            href="/terms"
+            className="hover:text-[#3b82f6] transition-colors"
+          >
+            Terms of Service
+          </Link>
+        </div>
       </div>
     </footer>
   );
