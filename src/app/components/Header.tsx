@@ -12,6 +12,24 @@ export default function Header() {
 
   const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
+  // Reusable External Link Arrow Icon
+  const ExternalArrow = () => (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="mb-1" // Slight alignment adjustment
+    >
+      <path d="M7 17L17 7" />
+      <path d="M7 7h10v10" />
+    </svg>
+  );
+
   return (
     <>
       <header className="sticky top-0 z-50 bg-navy/90 backdrop-blur-xl border-b border-blue/20 h-[93px]">
@@ -32,7 +50,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex gap-8 font-medium text-xl">
+          <nav className="hidden md:flex gap-8 font-medium text-xl items-center">
             {isHome ? (
               <>
                 <Link href="#services" className="hover:text-blue transition">
@@ -58,6 +76,21 @@ export default function Header() {
                 </Link>
               </>
             )}
+
+            {/* --- NEW BLOG LINK (DESKTOP) --- */}
+            <a
+              href="https://apexbyte.blog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue transition flex items-center gap-1 group/blog"
+            >
+              Blog
+              <span className="group-hover/blog:-translate-y-0.5 group-hover/blog:translate-x-0.5 transition-transform duration-200">
+                <ExternalArrow />
+              </span>
+            </a>
+            {/* ------------------------------- */}
+
             <Link href="/contact" className="hover:text-blue transition">
               Contact
             </Link>
@@ -160,6 +193,20 @@ export default function Header() {
               </Link>
             </>
           )}
+
+          {/* --- NEW BLOG LINK (MOBILE) --- */}
+          <a
+            href="https://apexbyte.blog"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={toggleMenu}
+            className="hover:text-blue transition flex items-center gap-2"
+          >
+            Blog
+            <ExternalArrow />
+          </a>
+          {/* ------------------------------ */}
+
           <Link
             href="/contact"
             onClick={toggleMenu}
@@ -167,6 +214,7 @@ export default function Header() {
           >
             Contact
           </Link>
+
           <div className="flex gap-4">
             <a
               href="https://www.upwork.com/agencies/1987633811629156401/"
