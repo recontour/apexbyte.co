@@ -10,10 +10,20 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 export const metadata: Metadata = {
   title: "ApexByte.co - Peak Performance Software",
   description: "Custom web, mobile, and AI software development agency",
-  icons: [
-    { rel: "icon", url: "/favicon.png" }, // ← ADD THIS: Your PNG favicon
-    { rel: "apple-touch-icon", url: "/favicon.png" }, // For iOS
-  ],
+  icons: {
+    icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
+    shortcut: ["/icon.png"],
+    apple: [
+      { url: "/apple-touch-icon.png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "apple-touch-icon-precomposed",
+        url: "/apple-touch-icon.png",
+      },
+    ],
+  },
 };
 
 export const viewport: Viewport = {
