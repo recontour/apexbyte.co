@@ -48,16 +48,16 @@ export default function Hero() {
   }, [text, isDeleting, loopNum, typingSpeed]);
 
   return (
-    // CHANGE 1: 'min-h-[calc(100dvh-93px)]' handles mobile address bars better
-    // CHANGE 2: 'justify-start pt-12' forces content UP on mobile, instead of floating in the middle
-    <section className="relative min-h-[calc(100dvh-93px)] flex flex-col justify-start md:justify-center overflow-hidden bg-slate-950 px-4 pt-12 md:py-20">
+    // CHANGE 1: Increased 'pt-12' to 'pt-24' to push everything down on mobile
+    // Desktop resets to 'md:pt-0' so vertical centering takes over
+    <section className="relative min-h-[calc(100dvh-93px)] flex flex-col justify-start md:justify-center overflow-hidden bg-slate-950 px-4 pt-24 md:pt-0 md:py-20">
       {/* Background */}
       <div className="absolute inset-0 bg-slate-950"></div>
       <div className="absolute top-[-20%] left-[-20%] w-[300px] h-[300px] bg-blue-900/20 rounded-full blur-[80px]"></div>
 
       <div className="relative z-10 text-center max-w-6xl mx-auto flex flex-col items-center w-full">
-        {/* CHANGE 3: Increased font to text-6xl for mobile */}
-        <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-2 text-white drop-shadow-2xl">
+        {/* CHANGE 2: Increased mobile font to 'text-7xl' */}
+        <h1 className="text-7xl md:text-8xl font-black tracking-tighter mb-2 text-white drop-shadow-2xl leading-tight">
           Apex<span className="text-[#3b82f6]">Byte</span>
         </h1>
 
