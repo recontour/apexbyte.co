@@ -48,36 +48,37 @@ export default function Hero() {
   }, [text, isDeleting, loopNum, typingSpeed]);
 
   return (
-    <section className="relative min-h-[calc(100vh-93px)] flex flex-col justify-center overflow-hidden bg-slate-950 px-4 py-8 md:py-20">
+    // CHANGE 1: 'min-h-[calc(100dvh-93px)]' handles mobile address bars better
+    // CHANGE 2: 'justify-start pt-12' forces content UP on mobile, instead of floating in the middle
+    <section className="relative min-h-[calc(100dvh-93px)] flex flex-col justify-start md:justify-center overflow-hidden bg-slate-950 px-4 pt-12 md:py-20">
       {/* Background */}
       <div className="absolute inset-0 bg-slate-950"></div>
       <div className="absolute top-[-20%] left-[-20%] w-[300px] h-[300px] bg-blue-900/20 rounded-full blur-[80px]"></div>
 
       <div className="relative z-10 text-center max-w-6xl mx-auto flex flex-col items-center w-full">
-        {/* Title */}
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-4 text-white drop-shadow-2xl">
+        {/* CHANGE 3: Increased font to text-6xl for mobile */}
+        <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-2 text-white drop-shadow-2xl">
           Apex<span className="text-[#3b82f6]">Byte</span>
         </h1>
 
         {/* Typing Container */}
-        <div className="h-12 md:h-24 mb-2 flex items-center justify-center">
-          <p className="text-lg md:text-4xl font-medium text-slate-300">
+        <div className="h-16 md:h-24 mb-2 flex items-center justify-center">
+          <p className="text-xl md:text-4xl font-medium text-slate-300">
             We are <span className="font-bold text-[#3b82f6]">{text}</span>
-            <span className="inline-block w-[2px] h-5 md:h-10 ml-1 bg-[#3b82f6] animate-blink align-middle"></span>
+            <span className="inline-block w-[2px] h-6 md:h-10 ml-1 bg-[#3b82f6] animate-blink align-middle"></span>
           </p>
         </div>
 
         {/* Description Text */}
         <div className="max-w-3xl mx-auto mb-6 w-full">
-          <p className="text-sm md:text-xl text-slate-400 leading-relaxed font-light px-2 py-6">
+          <p className="text-sm md:text-xl text-slate-400 leading-relaxed font-light px-2 py-4 md:py-6">
             We don't just write code; we engineer competitive advantages. We
             deliver{" "}
             <span className="text-white font-semibold">
               production-grade software
             </span>{" "}
             that is rigorously tested, architected for scale, and deployed on
-            time. No bloat. No excuses. Just clean, efficient ecosystems that
-            drive revenue.
+            time. No bloat. No excuses.
           </p>
 
           {/* Stats Row */}
@@ -107,9 +108,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* BUTTONS (Clean, No Icons) */}
-        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0 mt-2">
-          {/* 1. Primary Button: Blue Gradient */}
+        {/* BUTTONS */}
+        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0 mt-4">
           <Link
             href="/#services"
             className="w-full sm:w-auto px-8 py-3.5 rounded-xl text-white text-base md:text-lg font-bold flex justify-center items-center transition-transform active:scale-95 bg-gradient-to-r from-[#3b82f6] to-[#2563eb] shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
@@ -117,12 +117,10 @@ export default function Hero() {
             Explore Services
           </Link>
 
-          {/* 2. Secondary Button: Glass Dark */}
           <Link
             href="/contact"
             className="relative group w-full sm:w-auto px-8 py-3.5 rounded-xl text-slate-200 text-base md:text-lg font-semibold flex justify-center items-center bg-slate-900 border border-slate-700/50 shadow-lg active:bg-slate-800 transition-colors overflow-hidden"
           >
-            {/* Subtle blue glow behind text */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-50"></div>
             <span className="relative z-10">Get a Quote</span>
           </Link>
