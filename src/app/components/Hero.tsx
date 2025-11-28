@@ -83,10 +83,10 @@ export default function Hero() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 border-y border-slate-800 py-3 md:py-6 bg-slate-900/50 backdrop-blur-sm rounded-xl mx-2">
             <div className="flex flex-col">
               <span className="text-xl md:text-3xl font-bold text-white">
-                50+
+                18+ Years
               </span>
               <span className="text-[10px] md:text-sm text-slate-500 uppercase tracking-wider">
-                Projects
+                Experience
               </span>
             </div>
             <div className="flex flex-col">
