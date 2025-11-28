@@ -1,3 +1,27 @@
+import Image from "next/image";
+import Link from "next/link";
+
+const projects = [
+  {
+    title: "KredSafe",
+    category: "Fintech Platform",
+    desc: "A comprehensive credit monitoring solution helping users track, understand, and improve their financial health. Features secure data encryption and real-time score updates.",
+    tech: ["React", "Node.js", "Secure API", "Fintech"],
+    image: "/projects/kredsafe.png",
+    link: "https://kredsafe.com/",
+    slug: "/work/kredsafe",
+  },
+  {
+    title: "VastuLogic",
+    category: "Real Estate & Architecture",
+    desc: "A logic-driven approach to Vastu Shastra. We built a modern, algorithm-based platform that connects users with ancient architectural wisdom through a clean, tech-forward interface.",
+    tech: ["Next.js", "Algorithm Design", "Tailwind", "UI/UX"],
+    image: "/projects/vastulogic.png",
+    link: "https://www.vastulogic.in/",
+    slug: "/work/vastulogic",
+  },
+];
+
 export default function Portfolio() {
   return (
     <section
@@ -5,141 +29,137 @@ export default function Portfolio() {
       className="py-20 px-6 bg-slate-950 relative overflow-hidden"
     >
       {/* Background Decor */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 to-slate-950"></div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Selected <span className="text-[#3b82f6]">Work</span>
+            Our <span className="text-[#3b82f6]">Work</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            We operate as a stealth partner for many clients. While much of our
-            enterprise work is under NDA, our reputation speaks for itself.
+          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+            We deliver enterprise-grade solutions. Here are a few selected
+            projects where we transformed complex requirements into seamless
+            digital experiences.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Card 1: The "Stealth/Upwork" Card */}
-          <div className="group relative bg-slate-900/50 border border-slate-800 rounded-2xl p-8 md:p-10 hover:border-[#3b82f6]/50 transition-all duration-300 flex flex-col items-start h-full">
-            {/* Hover Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#3b82f6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
+        {/* Project Cards Grid */}
+        <div className="grid md:grid-cols-2 gap-10">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              // CHANGED:
+              // 1. 'rounded-3xl' -> 'rounded-2xl' (Less round)
+              // 2. Added 'p-2' (Creates the padding/frame around the image)
+              className="group relative bg-slate-900/40 border border-slate-800 rounded-2xl p-2 hover:border-slate-600 transition-all duration-500 flex flex-col"
+            >
+              {/* Image Container */}
+              {/* CHANGED: Added 'rounded-xl' so the image curves match the card */}
+              <div className="relative w-full aspect-video overflow-hidden bg-slate-900 rounded-xl">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
-            <div className="relative z-10 w-full">
-              {/* Icon/Badge */}
-              <div className="w-12 h-12 bg-[#3b82f6]/10 rounded-lg flex items-center justify-center mb-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
+                {/* Dark Overlay on Hover */}
+                <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/40 transition-colors duration-500"></div>
+
+                {/* Floating Category Badge */}
+                <div className="absolute top-4 left-4 text-xs font-bold text-white uppercase tracking-wider bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                  {project.category}
+                </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-3">
-                Verified Excellence
-              </h3>
-              <p className="text-slate-400 mb-8 leading-relaxed">
-                We are currently building{" "}
-                <span className="text-white">
-                  enterprise-grade architectures
-                </span>{" "}
-                and SaaS platforms. Check our client reviews and verified
-                project history on Upwork.
-              </p>
-            </div>
+              {/* Content Container */}
+              {/* CHANGED: Increased top padding 'pt-6' since we have the frame now */}
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-3xl font-bold text-white group-hover:text-[#3b82f6] transition-colors">
+                    {project.title}
+                  </h3>
 
-            <div className="mt-auto relative z-10 w-full">
-              <a
-                href="https://www.upwork.com/agencies/1987633811629156401/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex justify-center items-center gap-2 bg-white text-slate-950 px-6 py-4 rounded-xl font-bold transition-transform active:scale-95 hover:bg-slate-200"
-              >
-                Read Client Reviews
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-slate-800 rounded-full text-slate-400 hover:bg-[#3b82f6] hover:text-white transition-all transform hover:rotate-45"
+                    title="Visit Live Site"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </div>
+
+                <p className="text-slate-400 leading-relaxed mb-6 flex-grow">
+                  {project.desc}
+                </p>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 text-xs font-medium text-blue-200 bg-blue-900/20 border border-blue-500/20 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* View Case Study Button */}
+                <Link
+                  href={project.slug}
+                  className="w-full py-3.5 rounded-xl font-bold text-white text-center transition-all active:scale-[0.98] bg-gradient-to-r from-[#3b82f6] to-[#2563eb] shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
                 >
-                  <path d="M7 17L17 7" />
-                  <path d="M7 7h10v10" />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Card 2: The "Fiverr/Services" Card */}
-          <div className="group relative bg-slate-900/50 border border-slate-800 rounded-2xl p-8 md:p-10 hover:border-[#3b82f6]/50 transition-all duration-300 flex flex-col items-start h-full">
-            {/* Hover Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-
-            <div className="relative z-10 w-full">
-              {/* Icon/Badge */}
-              <div className="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#a855f7"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                  <line x1="12" y1="22.08" x2="12" y2="12" />
-                </svg>
+                  View Case Study
+                </Link>
               </div>
-
-              <h3 className="text-2xl font-bold text-white mb-3">
-                Managed Dev Sprints
-              </h3>
-              <p className="text-slate-400 mb-8 leading-relaxed">
-                Need a dedicated squad? We offer modular software development
-                packages led by an{" "}
-                <span className="text-white">8+ year Project Manager</span>.
-                From prototypes to full-stack scaling.
-              </p>
             </div>
+          ))}
+        </div>
 
-            <div className="mt-auto relative z-10 w-full">
-              <a
-                href="https://www.fiverr.com/s/YRZbDgQ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex justify-center items-center gap-2 bg-[#3b82f6] text-white px-6 py-4 rounded-xl font-bold shadow-lg shadow-blue-900/20 transition-transform active:scale-95 hover:bg-blue-600"
-              >
-                View Service Packages
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M7 17L17 7" />
-                  <path d="M7 7h10v10" />
-                </svg>
-              </a>
-            </div>
+        {/* Footer Links - Matching the "Dark List Item" Aesthetic */}
+        <div className="mt-20 text-center border-t border-slate-800 pt-10">
+          <p className="text-slate-500 mb-6">
+            Looking for smaller engagements or specific tasks?
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <a
+              href="https://www.upwork.com/agencies/1987633811629156401/"
+              target="_blank"
+              className="px-6 py-4 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:border-[#3b82f6]/50 hover:bg-slate-800 transition-all flex items-center justify-center gap-3 group"
+            >
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              <span className="text-slate-300 group-hover:text-white font-medium">
+                Verified Upwork Agency
+              </span>
+            </a>
+
+            <a
+              href="https://www.fiverr.com/s/YRZbDgQ"
+              target="_blank"
+              className="px-6 py-4 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:border-[#3b82f6]/50 hover:bg-slate-800 transition-all flex items-center justify-center gap-3 group"
+            >
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              <span className="text-slate-300 group-hover:text-white font-medium">
+                Fiverr Service Packages
+              </span>
+            </a>
           </div>
         </div>
       </div>

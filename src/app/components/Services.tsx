@@ -31,7 +31,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-24 px-6 bg-slate-950 relative overflow-hidden"
+      className="py-20 px-6 bg-slate-950 relative overflow-hidden"
     >
       {/* Background Glow */}
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>

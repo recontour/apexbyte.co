@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 border-t border-slate-800 py-10 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+    <footer className="bg-slate-950 border-t border-slate-800 py-6 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-sm">
         {/* Copyright */}
         <p className="text-slate-500">
           © {new Date().getFullYear()}{" "}
