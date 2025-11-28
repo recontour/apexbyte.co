@@ -26,11 +26,10 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="py-20 px-6 bg-slate-950 relative overflow-hidden"
+      className="py-20 px-6 bg-slate-900 relative overflow-hidden"
     >
-      {/* Background Decor */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 to-slate-950"></div>
-
+      {/* Background Decor - Subtle Grid */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800 to-slate-850"></div>
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-20">
