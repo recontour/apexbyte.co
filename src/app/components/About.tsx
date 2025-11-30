@@ -140,7 +140,7 @@ export default function About() {
           <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl group border border-slate-800">
             {/* Main Image */}
             <Image
-              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
+              src="/about/aboutus.jpg"
               alt="ApexByte Development"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
