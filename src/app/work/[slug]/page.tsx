@@ -2,97 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/app/components/Header";
-
-// --- THE DATA SOURCE (Add new projects here) ---
-const projectsData: Record<string, any> = {
-  vastulogic: {
-    title: "VastuLogic",
-    subtitle: "Real Estate CRM & Investment Portal",
-    tag: "Real Estate Tech",
-    tagColor: "blue", // <--- CHANGED FROM ORANGE TO BLUE
-    heroImage: "/projects/vastulogic.png",
-    liveLink: "https://www.vastulogic.in/",
-    description:
-      "A full-stack real estate CRM and investment portal bridging the gap between property browsing and data-driven investing. It features a sophisticated Role-Based Access Control (RBAC) system serving Investors, Agents, and Admins.",
-    gradient: "from-[#3b82f6] to-[#2563eb]",
-    features: [
-      {
-        title: "Role-Based Security (RBAC)",
-        desc: "Custom auth flow serving Investors, Agents, and Admins. Only verified 'Clients' see sensitive financial ROI data.",
-        icon: "shield",
-      },
-      {
-        title: "Admin Command Center",
-        desc: "Comprehensive dashboard for managing listings (CRUD), approving users, and tracking lead lifecycles.",
-        icon: "layout",
-      },
-      {
-        title: "Performance & SEO",
-        desc: "Built on Next.js Server Components, Cloudinary image optimization, and GPU-accelerated gestures.",
-        icon: "zap",
-      },
-      {
-        title: "Lead Generation Engine",
-        desc: "Inquiry forms automatically populate the internal CRM, notifying agents of opportunities instantly.",
-        icon: "target",
-      },
-    ],
-    techStack: {
-      Frontend: [
-        "Next.js 16",
-        "React",
-        "Tailwind",
-        "Lucide React",
-        "Framer Motion",
-      ],
-      "Backend & Data": [
-        "PostgreSQL (Neon)",
-        "Prisma ORM",
-        "Next.js API Routes",
-      ],
-      Infrastructure: ["NextAuth v5", "Cloudinary", "Vercel Edge"],
-    },
-  },
-  kredsafe: {
-    // ... Kredsafe data remains the same ...
-    title: "KredSafe",
-    subtitle: "Financial Health & Credit Monitoring",
-    tag: "Fintech",
-    tagColor: "blue",
-    heroImage: "/projects/kredsafe.png",
-    liveLink: "https://kredsafe.com/",
-    description:
-      "A comprehensive credit monitoring solution helping users track, understand, and improve their financial health. We implemented bank-grade security protocols to handle sensitive user financial data securely.",
-    gradient: "from-blue-600 to-indigo-600",
-    features: [
-      {
-        title: "Bank-Grade Security",
-        desc: "End-to-end encryption for all sensitive user data, ensuring compliance with financial data regulations.",
-        icon: "lock",
-      },
-      {
-        title: "Real-Time Score Tracking",
-        desc: "Integration with credit bureaus to fetch and display updated credit scores dynamically.",
-        icon: "chart",
-      },
-      {
-        title: "Personalized Insights",
-        desc: "AI-driven algorithms that analyze credit reports and suggest actionable steps to improve scores.",
-        icon: "lightbulb",
-      },
-      {
-        title: "Subscription Management",
-        desc: "Seamless payment gateway integration for premium credit report tiers and monitoring services.",
-        icon: "credit-card",
-      },
-    ],
-    techStack: {
-      Frontend: ["React", "Redux Toolkit", "Bootstrap", "Chart.js"],
-      Backend: ["Node.js", "Express", "MongoDB", "Redis"],
-      Security: ["JWT Auth", "AES-256 Encryption", "AWS Shield"],
-    },
-  },
-};
+import { projects } from "@/data/projects";
 
 // --- ICON HELPER ---
 const FeatureIcon = ({ name }: { name: string }) => {
@@ -245,7 +155,7 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project = projectsData[slug];
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return notFound();

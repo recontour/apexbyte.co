@@ -1,35 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const projects = [
-  {
-    title: "KredSafe",
-    category: "Fintech Platform",
-    desc: "A comprehensive credit monitoring solution helping users track, understand, and improve their financial health. Features secure data encryption and real-time score updates.",
-    tech: ["React", "Node.js", "Secure API", "Fintech"],
-    image: "/projects/kredsafe.png",
-    link: "https://kredsafe.com/",
-    slug: "/work/kredsafe",
-  },
-  {
-    title: "VastuLogic",
-    category: "Real Estate & Architecture",
-    desc: "A logic-driven approach to Vastu Shastra. We built a modern, algorithm-based platform that connects users with ancient architectural wisdom through a clean, tech-forward interface.",
-    tech: ["Next.js", "Algorithm Design", "Tailwind", "UI/UX"],
-    image: "/projects/vastulogic.png",
-    link: "https://www.vastulogic.in/",
-    slug: "/work/vastulogic",
-  },
-];
+// Import the shared data source
+// Ensure this path matches where you saved the file.
+// If it's in src/data, then "../data/projects" is correct from src/components
+import { projects } from "@/data/projects";
 
 export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="py-20 px-6 bg-slate-900 relative overflow-hidden"
+      className="py-24 px-6 bg-slate-950 relative overflow-hidden"
     >
-      {/* Background Decor - Subtle Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800 to-slate-850"></div>
+      {/* Background Decor - Subtle Dark Gradient */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] opacity-20 pointer-events-none"></div>
+
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none"></div>
+
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-20">
@@ -43,18 +30,14 @@ export default function Portfolio() {
           </p>
         </div>
 
-        {/* Project Cards Grid */}
+        {/* Project Cards Grid - Dynamically populated from data */}
         <div className="grid md:grid-cols-2 gap-10">
           {projects.map((project, index) => (
             <div
               key={index}
-              // CHANGED:
-              // 1. 'rounded-3xl' -> 'rounded-2xl' (Less round)
-              // 2. Added 'p-2' (Creates the padding/frame around the image)
               className="group relative bg-slate-900/40 border border-slate-800 rounded-2xl p-2 hover:border-slate-600 transition-all duration-500 flex flex-col"
             >
-              {/* Image Container */}
-              {/* CHANGED: Added 'rounded-xl' so the image curves match the card */}
+              {/* Image Container with "Picture Frame" Padding */}
               <div className="relative w-full aspect-video overflow-hidden bg-slate-900 rounded-xl">
                 <Image
                   src={project.image}
@@ -73,13 +56,13 @@ export default function Portfolio() {
               </div>
 
               {/* Content Container */}
-              {/* CHANGED: Increased top padding 'pt-6' since we have the frame now */}
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-3xl font-bold text-white group-hover:text-[#3b82f6] transition-colors">
                     {project.title}
                   </h3>
 
+                  {/* External Link Icon (To Live Site) */}
                   <a
                     href={project.link}
                     target="_blank"
@@ -108,7 +91,7 @@ export default function Portfolio() {
                   {project.desc}
                 </p>
 
-                {/* Tech Stack */}
+                {/* Tech Stack Pills */}
                 <div className="flex flex-wrap gap-2 mb-8">
                   {project.tech.map((tech) => (
                     <span
@@ -120,9 +103,9 @@ export default function Portfolio() {
                   ))}
                 </div>
 
-                {/* View Case Study Button */}
+                {/* View Case Study Button (Dynamic Link) */}
                 <Link
-                  href={project.slug}
+                  href={`/work/${project.slug}`} // <--- This dynamically builds the URL based on the ID
                   className="w-full py-3.5 rounded-xl font-bold text-white text-center transition-all active:scale-[0.98] bg-gradient-to-r from-[#3b82f6] to-[#2563eb] shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
                 >
                   View Case Study
@@ -132,7 +115,7 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/* Footer Links - Matching the "Dark List Item" Aesthetic */}
+        {/* Footer Links - Upwork / Fiverr */}
         <div className="mt-20 text-center border-t border-slate-800 pt-10">
           <p className="text-slate-500 mb-6">
             Looking for smaller engagements or specific tasks?
