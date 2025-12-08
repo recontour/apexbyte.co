@@ -99,4 +99,64 @@ export const projects = [
       Infrastructure: ["NextAuth v5", "Cloudinary", "Vercel Edge"],
     },
   },
+  {
+    slug: "refine-rack",
+    title: "Refine Rack",
+    subtitle: "AI Product Photography & Inventory System",
+    category: "AI & E-commerce",
+    tag: "Generative AI SaaS",
+    tagColor: "indigo",
+    desc: "Transforming raw phone photos into studio-quality e-commerce assets using Generative AI. A mobile-first platform that automates product photography and listing creation.",
+    description:
+      "A sophisticated mobile-first web application that leverages Google's Imagen 3 and Gemini Pro to democratize product photography. It features a parallel AI pipeline that simultaneously refines images and generates SEO-ready descriptions, all wrapped in a secure, credit-based SaaS architecture with a custom admin dashboard.",
+    image: "/projects/refinerack.png",
+    heroImage: "/projects/refinerack.png",
+    link: "https://refinerack.com/",
+    liveLink: "https://refinerack.com/",
+    gradient: "from-[#3b82f6] to-[#6366f1]",
+    tech: ["Next.js", "Firebase", "Gemini AI", "Imagen 3"],
+    features: [
+      {
+        title: "Parallel AI Pipeline",
+        desc: "Simultaneous execution of image refinement (via Imagen 3) and product data extraction (via Gemini 1.5 Pro) for instant results.",
+        icon: "cpu",
+      },
+      {
+        title: "Mobile-First Capture",
+        desc: "Native-like camera integration with client-side auto-cropping, compression, and an immersive edge-to-edge UI.",
+        icon: "smartphone",
+      },
+      {
+        title: "SaaS Credit System",
+        desc: "Built-in monetization logic with user credits, waitlist management, and a secure 'Admin Console' for user approval.",
+        icon: "credit-card",
+      },
+      {
+        title: "Global Showcase",
+        desc: "A public-facing gallery that allows users to publish their best AI-generated assets to a shared community stream.",
+        icon: "globe",
+      },
+    ],
+    techStack: {
+      Frontend: [
+        "Next.js (App Router)",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Lucide React",
+      ],
+      "Backend & Data": [
+        "Firebase Firestore",
+        "Firebase Authentication",
+        "Firebase Storage",
+        "Node.js (API Routes)",
+      ],
+      "AI & Infrastructure": [
+        "Google Vertex AI (Imagen 3)",
+        "Google Gemini 1.5 Pro",
+        "Firebase App Hosting",
+        "Sharp (Image Processing)",
+      ],
+    },
+  },
 ];
