@@ -2,11 +2,60 @@
 
 export const projects = [
   {
-    slug: "neoarth", // Acts as the ID
+    slug: "prive-muse",
+    title: "PriveMuse",
+    subtitle: "The Digital Atelier for Luxury Brands",
+    category: "Fashion Tech & SaaS",
+    tag: "Luxury SaaS",
+    tagColor: "rose",
+    desc: "The Digital Atelier for independent luxury designers. A platform that combines AI-driven visual management with high-converting editorial storytelling.",
+    description:
+      "A specialized SaaS platform designed for the high-fashion industry. PriveMuse acts as a 'Digital Atelier,' allowing designers to manage collections with editorial-grade 9:16 imagery and generate brand-aligned narratives using our custom 'AI Composer'.",
+    image: "/projects/privemuse.png",
+    heroImage: "/projects/privemuse.png",
+    link: "https://privemuse.art",
+    liveLink: "https://privemuse.art",
+    gradient: "from-rose-500 to-pink-600",
+    tech: ["Next.js", "AI Composer", "Glassmorphism", "SaaS"],
+    features: [
+      {
+        title: "Visual Management",
+        desc: "Optimized for vertical 9:16 editorial imagery to ensure maximum impact on modern mobile displays.",
+        icon: "layout",
+      },
+      {
+        title: "AI Composer",
+        desc: "Transforms simple brand keywords into sophisticated, high-converting fashion narratives and product descriptions.",
+        icon: "lightbulb",
+      },
+      {
+        title: "Glassmorphic UI",
+        desc: "A fully immersive interface designed with 'Dark Glass' aesthetics to match the standards of luxury fashion houses.",
+        icon: "smartphone",
+      },
+      {
+        title: "Global Showcase",
+        desc: "A curated community stream where designers can publish their portfolios to a global audience.",
+        icon: "globe",
+      },
+    ],
+    techStack: {
+      Frontend: [
+        "Next.js 15",
+        "Framer Motion",
+        "Tailwind CSS",
+        "Glassmorphism UI",
+      ],
+      Backend: ["Firebase", "Node.js", "Cloud Functions"],
+      "AI Engine": ["Google Gemini 1.5 Flash", "Imagen 3"],
+    },
+  },
+  {
+    slug: "neoarth",
     title: "NeoArth",
     subtitle: "AI-Powered Paper Trading Platform",
-    category: "Fintech Platform", // Used in Portfolio Card
-    tag: "Fintech", // Used in Case Study Hero
+    category: "Fintech Platform",
+    tag: "Fintech",
     tagColor: "purple",
     desc: "A risk-free stock market simulation platform designed to democratize financial literacy. Features virtual capital, AI analysis, and real-time market data.",
     description:
@@ -16,7 +65,7 @@ export const projects = [
     link: "https://neoarth.in/",
     liveLink: "https://neoarth.in/",
     gradient: "from-blue-600 to-purple-600",
-    tech: ["Next.js", "Supabase", "Gemini AI", "Fintech"], // Short list for card
+    tech: ["Next.js", "Supabase", "Gemini AI", "Fintech"],
     features: [
       {
         title: "AI Financial Advisor",
@@ -35,7 +84,7 @@ export const projects = [
       },
       {
         title: "Secure Authentication",
-        desc: " robust email authentication and user session management powered by Supabase, ensuring persistent portfolio data.",
+        desc: "Robust email authentication and user session management powered by Supabase, ensuring persistent portfolio data.",
         icon: "lock",
       },
     ],
@@ -108,7 +157,7 @@ export const projects = [
     tagColor: "indigo",
     desc: "Transforming raw phone photos into studio-quality e-commerce assets using Generative AI. A mobile-first platform that automates product photography and listing creation.",
     description:
-      "A sophisticated mobile-first web application that leverages Google's Imagen 3 and Gemini Pro to democratize product photography. It features a parallel AI pipeline that simultaneously refines images and generates SEO-ready descriptions, all wrapped in a secure, credit-based SaaS architecture with a custom admin dashboard.",
+      "A sophisticated mobile-first web application that leverages Google's Imagen 3 and Gemini Pro to democratize product photography. It features a parallel AI pipeline that simultaneously refines images and generates SEO-ready descriptions.",
     image: "/projects/refinerack.png",
     heroImage: "/projects/refinerack.png",
     link: "https://refinerack.com/",
